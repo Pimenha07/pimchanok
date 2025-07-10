@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio ของ พิมพ์ชนก</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+
+    <style>
+        :root {
+            --primary-dark: #222;
+            --secondary-dark: #333;
+            --text-light: #f8f8f8;
+            --text-dark: #333;
+            --background-light: #f8f8f8;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.5s;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 85%;
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        /* --- Header Section --- */
+        #header {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 80px 0 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        #header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6); 
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 85%;
+            max-width: 960px;
+            margin: auto;
+        }
+        .nav-logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-lists {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-lists li {
+            margin-left: 30px;
+        }
+        .nav-lists a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1.1em;
+            transition: color var(--transition-speed), transform var(--transition-speed);
+        }
+        .nav-lists a:hover {
+            color: #ccc; 
+            transform: translateY(-2px);
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .header-text img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 7px solid var(--text-light);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+        .header-text img.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .header-text .text h1 {
+            margin: 0;
+            font-size: 3.8em;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease-out;
+        }
+        .header-text .text h1 span {
+            color: var(--text-light); 
+        }
+        .header-text .text {
+            color: var(--text-light);
+        }
+
+        /* --- Main Sections Styling --- */
+        .section-common {
+            background: var(--text-light);
+            padding: 40px;
+            margin-top: 25px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+        }
+        .section-common.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-common h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+        .section-common h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-dark);
+            border-radius: 2px;
+        }
+        .section-common h2 ion-icon {
+            font-size: 1em;
+            color: var(--primary-dark); 
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        /* --- About Me Section --- */
+        .about-me-content p {
+            font-size: 1.15em;
+            text-align: left;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        .about-me-content p strong {
+            color: var(--secondary-dark);
+        }
+
+        /* --- Hobbies & Work Experience Sections --- */
+        .simple-list ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .simple-list ul li {
+            font-size: 1.15em;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .simple-list ul li::before {
+            content: "•";
+            color: var(--primary-dark); 
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- Contact Section --- */
+        #contact-section {
+            background-color: var(--secondary-dark);
+            color: var(--text-light);
+            padding: 40px;
+            margin-top: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+        }
+        #contact-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .contact-header-text h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        .contact-section .line {
+            width: 100px;
+            height: 3px;
+            background-color: var(--text-light); 
+            margin: 0 auto 30px auto;
+            border-radius: 2px;
+        }
+        .social-media {
+            margin-top: 30px;
+        }
+        .social-media a {
+            font-size: 3.5em;
+            color: var(--text-light);
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+        .social-media a:hover {
+            color: #aaa;
+            transform: translateY(-5px) scale(1.1);
+        }
+        .tel {
+            margin-top: 30px;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        .tel ion-icon {
+            vertical-align: middle;
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: var(--text-light);
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            margin-top: 50px;
+            font-size: 0.9em;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px 0;
+            }
+            #header {
+                padding: 60px 0 30px 0;
+            }
+            .nav-items {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-logo {
+                margin-bottom: 15px;
+            }
+            .nav-lists {
+                flex-direction: column;
+                width: 100%;
+                text-align: left;
+            }
+            .nav-lists li {
+                margin: 5px 0;
+                width: 100%;
+            }
+            .header-text img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 20px;
+            }
+            .header-text .text h1 {
+                font-size: 2.8em;
+            }
+            .section-common {
+                padding: 25px;
+            }
+            .section-common h2 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+            .about-me-content p {
+                font-size: 1em;
+            }
+            .simple-list ul li {
+                font-size: 1em;
+            }
+            .social-media a {
+                font-size: 2.5em;
+                margin: 0 10px;
+            }
+            .tel {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInFromTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <div class="nav-items">
+                <a class="nav-logo" href="#header">PIMCHANOK.ME</a>
+                <ul class="nav-lists">
+                    <li>
+                        <a href="#header">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about-section">About</a>
+                    </li>
+                    <li>
+                        <a href="#hobbies-section">Hobbies</a>
+                    </li>
+                    <li>
+                        <a href="#work-section">Work Experience</a>
+                    </li>
+                    <li>
+                        <a href="#contact-section">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="header-text">
+            <img src="S__115654658.jpg" alt="profile-pic" class="profile-img-header" id="headerProfileImg">
+            <div class="text">
+                <h1>Hello<span></span></h1>
+                <h1>I <span>am</span> Pimchanok.</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="about-section" class="section-common">
+            <h2><ion-icon name="person-circle-sharp"></ion-icon>About me</h2>
+            <div class="about-me-content">
+                <p><strong>ชื่อ:</strong> พิมพ์ชนก แพงทอง</p>
+                <p><strong>ชื่อเล่น:</strong> พิมพ์</p>
+                <p><strong>อายุ:</strong> 23 ปี</p>
+                <p><strong>วันเกิด:</strong> 26 ธันวาคม 2545</p>
+                <p><strong>สถานศึกษา:</strong> มหาวิทยาลัยเทคโนโลยีราชมงคลสุวรรณภูมิ</p>
+                <p><strong>สาขาวิชา:</strong> วิทยาการคอมพิวเตอร์</p>
+                <p><strong>คติประจำใจ:</strong> อย่ากลัวในสิ่งที่ไม่เก่ง เพราะทุกอย่างมันเรียนรู้ได้เสมอ</p>
+            </div>
+        </section>
+
+        <section id="hobbies-section" class="section-common simple-list">
+            <h2><ion-icon name="heart-circle-sharp"></ion-icon>Hobbies</h2>
+            <ul>
+                <li>ดูหนัง</li>
+                <li>ฟังเพลง</li>
+            </ul>
+        </section>
+
+        <section id="work-section" class="section-common simple-list">
+            <h2><ion-icon name="briefcase-sharp"></ion-icon>Work experience</h2>
+            <ul>
+                <li>Cafe Amezon</li>
+                <li>Monkeyland Playground</li>
+                <li>Indexlivingmall Bangyai Branch</li>
+                <li>Indexlivingmall Rattanathibet Branch</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <div id="contact-section" class="contact-section section-common">
+            <div class="contact-header-text">
+                <h1>CONTACT</h1>
+            </div>
+            <div class="line"></div>
+            <div class="social-media">
+                <a href="https://www.facebook.com/share/16zc1WLAy7/?mibextid=wwXIfr" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://line.me/ti/p/uVCCRVusrm" target="_blank" title="Line">
+                    <i class="fab fa-line"></i>
+                </a>
+                <a href="https://www.instagram.com/12ppimcha?igsh=eHc4endkaWkzejd1" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </div>
+            <div class="tel">
+                <p><ion-icon name="call"></ion-icon> Tel. 0642762550</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            const headerProfileImg = document.getElementById('headerProfileImg');
+
+            header.classList.add('visible');
+            setTimeout(() => {
+                headerProfileImg.classList.add('visible');
+            }, 500);
+
+            const sections = document.querySelectorAll('.section-common');
+            const contactSection = document.getElementById('contact-section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+            sectionObserver.observe(contactSection);
+
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    let targetElement;
+
+                    if (targetId === '#header') {
+                        targetElement = document.querySelector(targetId);
+                    } else {
+                        targetElement = document.querySelector(targetId);
+                    }
+
+                    if (targetElement) {
+                        const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        
+                        window.scrollTo({
+                            top: offsetTop - (targetId === '#header' ? 0 : 80),
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
