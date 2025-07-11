@@ -191,7 +191,14 @@
             color: var(--secondary-dark);
         }
 
-        /* --- Hobbies & Work Experience Sections --- */
+        /* --- Short Note Section --- */
+        .short-note-content p {
+            font-size: 1.15em;
+            text-align: left;
+            color: var(--text-dark);
+        }
+
+        /* --- Hobbies & Projects Sections --- */
         .simple-list ul {
             list-style: none;
             padding: 0;
@@ -213,6 +220,16 @@
             position: absolute;
             left: 0;
         }
+        .simple-list ul li a { /* Style for links within lists */
+            color: var(--primary-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .simple-list ul li a:hover {
+            color: var(--secondary-dark);
+            text-decoration: underline;
+        }
+
 
         /* --- Contact Section --- */
         #contact-section {
@@ -269,6 +286,7 @@
             margin-right: 10px;
             font-size: 1.2em;
             color: var(--text-light);
+        }
 
         /* --- Footer --- */
         footer {
@@ -279,6 +297,20 @@
             margin-top: 50px;
             font-size: 0.9em;
             box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+            /* Added style for the new link */
+            position: relative; /* เพื่อให้สามารถจัดตำแหน่ง link ได้ */
+        }
+        .footer-logo-link {
+            display: block; /* ทำให้ link เป็น block level เพื่อให้ text-align: center ทำงานได้ */
+            text-decoration: none;
+            color: var(--text-light); /* สีตัวอักษร */
+            font-size: 1.2em; /* ขนาดตัวอักษร */
+            font-weight: 700; /* ทำให้ตัวหนา */
+            margin-top: 15px; /* ระยะห่างจากเนื้อหา Contact ด้านบน */
+            transition: color 0.3s ease;
+        }
+        .footer-logo-link:hover {
+            color: #ccc; /* สีเมื่อ hover */
         }
 
         /* --- Responsive Design --- */
@@ -321,7 +353,7 @@
                 font-size: 2em;
                 margin-bottom: 20px;
             }
-            .about-me-content p {
+            .about-me-content p, .short-note-content p { 
                 font-size: 1em;
             }
             .simple-list ul li {
@@ -361,13 +393,16 @@
                         <a href="#header">Home</a>
                     </li>
                     <li>
-                        <a href="#about-section">About</a>
+                        <a href="#short-note-section">Short Note</a>
+                    </li>
+                    <li>
+                        <a href="#about-section">About me</a>
                     </li>
                     <li>
                         <a href="#hobbies-section">Hobbies</a>
                     </li>
                     <li>
-                        <a href="#work-section">Work Experience</a>
+                        <a href="#projects-section">My Projects</a>
                     </li>
                     <li>
                         <a href="#contact-section">Contact</a>
@@ -385,6 +420,13 @@
     </header>
 
     <div class="container">
+        <section id="short-note-section" class="section-common">
+            <h2><ion-icon name="clipboard-sharp"></ion-icon>Short note</h2>
+            <div class="short-note-content">
+                <p>สวัสดีค่ะ ชื่อนางสาวพิมพ์ชนก แพงทอง ตอนนี้กำลังศึกษาอยู่สาขาวิทยาการคอมพิวเตอร์ ชั้นปีที่ 3 คณะวิทยาศาสตร์และเทคโนโลยี ตอนนี้สนใจเรื่องการทดสอบซอฟแวร์ แม้ยังไม่ได้ศึกษาเชิงลึกแต่รู้สึกว่าเป็นด้านที่น่าสนใจและอยากลองเรียนรู้มากขึ้นในอนาคต เพราะตอนนี้ยังอยู่ในช่วงที่หาสิ่งที่เหมาะสมกับตัวเองอยู่ค่ะ</p>
+            </div>
+        </section>
+
         <section id="about-section" class="section-common">
             <h2><ion-icon name="person-circle-sharp"></ion-icon>About me</h2>
             <div class="about-me-content">
@@ -406,13 +448,11 @@
             </ul>
         </section>
 
-        <section id="work-section" class="section-common simple-list">
-            <h2><ion-icon name="briefcase-sharp"></ion-icon>Work experience</h2>
+        <section id="projects-section" class="section-common simple-list">
+            <h2><ion-icon name="folder-sharp"></ion-icon>My Projects</h2>
             <ul>
-                <li>Cafe Amezon</li>
-                <li>Monkeyland Playground</li>
-                <li>Indexlivingmall Bangyai Branch</li>
-                <li>Indexlivingmall Rattanathibet Branch</li>
+                <li><a href="https://drive.google.com/file/d/1LTYT2o8TQb8x8PIMXADSGiVlVy2LgpM_/view" target="_blank">ออกแบบ UX/UI</a></li>
+                <li><a href="https://drive.google.com/file/d/1DbWim9kJVOwt9w9gYvv2sezxJoucfIO_/view" target="_blank">Water sensor วัดระดับน้ำด้วยเซ็นเซอร์</a></li>
             </ul>
         </section>
     </div>
@@ -438,6 +478,7 @@
                 <p><ion-icon name="call"></ion-icon> Tel. 0642762550</p>
             </div>
         </div>
+        <a href="#header" class="footer-logo-link">PIMCHANOK.ME</a>
     </footer>
 
     <script>
@@ -473,7 +514,7 @@
             });
             sectionObserver.observe(contactSection);
 
-            document.querySelectorAll('nav a').forEach(anchor => {
+            document.querySelectorAll('nav a, .footer-logo-link').forEach(anchor => { // Added .footer-logo-link here
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
 
@@ -490,7 +531,7 @@
                         const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
                         
                         window.scrollTo({
-                            top: offsetTop - (targetId === '#header' ? 0 : 80),
+                            top: offsetTop - (targetId === '#header' ? 0 : 80), // Adjusted offset for smooth scroll
                             behavior: 'smooth'
                         });
                     }
