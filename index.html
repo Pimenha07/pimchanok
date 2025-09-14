@@ -1,606 +1,259 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RUJI MATCHA - มัทฉะแท้จากญี่ปุ่น</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <style>
-        :root {
-            --matcha-green: #7a8b73;
-            --light-green: #9db09a;
-            --cream: #f0ebe3;
-            --brown: #8b4513;
-            --sage-green: #8ca085;
-            --muted-green: #a8b5a5;
-        }
-        
-        body {
-            font-family: 'Noto Sans Thai', sans-serif;
-            background-color: #faf9f7;
-        }
-        
-        .navbar {
-            background: linear-gradient(135deg, var(--matcha-green), var(--sage-green));
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(122, 139, 115, 0.8), rgba(157, 176, 154, 0.8)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f0ebe3" width="1200" height="800"/><circle fill="%23e8e3db" cx="200" cy="200" r="100"/><circle fill="%23ddd8d0" cx="800" cy="300" r="80"/><circle fill="%23d2cdc5" cx="1000" cy="150" r="60"/></svg>');
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-        
-        .product-card {
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            background: var(--cream);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .product-image {
-            height: 200px;
-            background: linear-gradient(45deg, var(--sage-green), var(--matcha-green));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-        }
-        
-        .price-tag {
-            background: var(--matcha-green);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            display: inline-block;
-        }
-        
-        .section-title {
-            color: var(--matcha-green);
-            font-weight: 600;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--sage-green);
-            margin: 10px auto;
-        }
-        
-        .vegan-badge {
-            background: var(--sage-green);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            margin-left: 5px;
-        }
-        
-        .recommended-badge {
-            background: #ffc107;
-            color: #000;
-            padding: 3px 8px;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            margin-left: 5px;
-        }
-        
-        .footer {
-            background: var(--matcha-green);
-            color: white;
-            padding: 3rem 0;
-        }
-        
-        .btn-matcha {
-            background: var(--matcha-green);
-            border: none;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-matcha:hover {
-            background: var(--sage-green);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .japanese-pattern {
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(157, 176, 154, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(122, 139, 115, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(140, 160, 133, 0.1) 0%, transparent 50%);
-        }
-        
-        .logo-svg {
-            height: 50px;
-            width: auto;
-            margin-right: 15px;
-        }
-        
-        .hero-logo {
-            height: 200px;
-            width: auto;
-            margin-bottom: 3rem;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-            transition: transform 0.3s ease;
-        }
-        
-        .hero-logo:hover {
-            transform: scale(1.05);
-        }
-        
-        .navbar-brand {
-            font-size: 1.6rem !important;
-        }
-        
-        .logo-glow {
-            animation: subtle-glow 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes subtle-glow {
-            from {
-                filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-            }
-            to {
-                filter: drop-shadow(0 4px 12px rgba(157, 176, 154, 0.4));
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Yummy Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Yummy
+  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-                <img src="cropped_circle_image.png" class="logo-svg">
-                RUJI MATCHA
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">หน้าแรก</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#drinks">เครื่องดื่ม</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#bakery">เบเกอรี่</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#specials">เมนูพิเศษ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อ</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Mori Matcha</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#M1" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="text-center mb-4">
-                        <img src="cropped_circle_image.png" alt="RUJI MATCHA Logo" class="hero-logo logo-glow">
-                    </div>
-                    <h1 class="display-4 fw-bold mb-4">RUJI MATCHA</h1>
-                    <p class="lead mb-4">มัทฉะแท้จากญี่ปุ่น รสชาติเข้มข้น หอมหวาน</p>
-                    <p class="mb-5">สัมผัสความหอมของชาเขียวคุณภาพสูงจากญี่ปุ่น ผสานกับเครื่องดื่มและขนมหวานสไตล์ญี่ปุ่นแท้</p>
-                    <a href="#drinks" class="btn btn-matcha btn-lg">
-                        <i class="bi bi-cup-hot"></i> ดูเมนู
-                    </a>
-                </div>
+    <section id="M1" class="M1 section light-background">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-center justify-content-lg-between">
+          <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h1 data-aos="fade-up" style="font-size: 65px;">Enjoy Your Drink<br>Taste the Art of Matcha</h1>
+            <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
             </div>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2 M1.png" data-aos="zoom-out">
+            <img class="src-fluid animated" alt="" src="assets/img/M1.png" style="width: 50%">
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Drinks Section -->
-    <section id="drinks" class="py-5 japanese-pattern">
-        <div class="container">
-            <h2 class="text-center section-title">เครื่องดื่มมัทฉะ</h2>
-            
-            <!-- Milk Based Drinks -->
-            <h3 class="text-center mb-4 text-muted">MILK</h3>
-            <div class="row g-4 mb-5">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍵</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะลาเต้</h5>
-                            <p class="card-text small">เมนูยอดนิยม รสชาติกลมกล่อม หอมชาเขียวและนม</p>
-                            <p class="mb-2">
-                                <span class="price-tag">135 บาท</span>
-                                <span class="recommended-badge">Recommended</span>
-                            </p>
-                            <small class="text-muted">OAT MILK + 20 บ</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🥛</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">โฮจิฉะลาเต้คาราเมล</h5>
-                            <p class="card-text small">โฮจิฉะลาเต้ผสมคาราเมล หอม หวาน</p>
-                            <p class="mb-2">
-                                <span class="price-tag">145 บาท</span>
-                            </p>
-                            <small class="text-muted">OAT MILK + 20 บ</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🥥</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะครีมมะพร้าว</h5>
-                            <p class="card-text small">มัทฉะราดด้วยครีมมะพร้าว หอม หวาน มัน</p>
-                            <p class="mb-2">
-                                <span class="price-tag">150 บาท</span>
-                                <span class="vegan-badge">Vegan Friendly</span>
-                            </p>
-                            <small class="text-muted">OAT MILK + 20 บ</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍑</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะลิ้นจี่</h5>
-                            <p class="card-text small">มัทฉะผสมลิ้นจี่ หอมหวาน สดชื่น</p>
-                            <p class="mb-2">
-                                <span class="price-tag">130 บาท</span>
-                                <span class="vegan-badge">Vegan Friendly</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Clear Based Drinks -->
-            <h3 class="text-center mb-4 text-muted">CLEAR</h3>
-            <div class="row g-4 mb-5">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🌿</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">โฮจิฉะใส</h5>
-                            <p class="card-text small">ชาโฮจิฉะ (ชาเขียวคั่ว) หอมกลิ่นคั่วอ่อนๆ</p>
-                            <p class="mb-2">
-                                <span class="price-tag">120 บาท</span>
-                            </p>
-                            <small class="text-muted">+ น้ำผึ้ง 10 บ</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🥥</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะมะพร้าว</h5>
-                            <p class="card-text small">มัทฉะผสมน้ำมะพร้าว หอมหวานสดชื่น</p>
-                            <p class="mb-2">
-                                <span class="price-tag">130 บาท</span>
-                                <span class="vegan-badge">Vegan Friendly</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍯</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะยูซุน้ำผึ้ง</h5>
-                            <p class="card-text small">มัทฉะผสมน้ำยูซุ หวาน เปรี้ยว สดชื่น</p>
-                            <p class="mb-2">
-                                <span class="price-tag">145 บาท</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍇</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะลิ้นจี่</h5>
-                            <p class="card-text small">มัทฉะผสมลิ้นจี่ หอมหวาน สดชื่น</p>
-                            <p class="mb-2">
-                                <span class="price-tag">130 บาท</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Special Drinks -->
-            <h3 class="text-center mb-4 text-muted">SPECIALS</h3>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍫</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะช็อกโกลาเต้</h5>
-                            <p class="card-text small">มัทฉะช็อกโกลาเต้ เข้มข้น หวานมัน</p>
-                            <p class="mb-2">
-                                <span class="price-tag">145 บาท</span>
-                                <span class="recommended-badge">Recommended</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">☕</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">UJI Samidori</h5>
-                            <p class="card-text small">ชาเขียวพรีเมี่ยม อูจิ ซามิโดริ</p>
-                            <p class="mb-2">
-                                <span class="price-tag">350 บาท</span>
-                                <span class="vegan-badge">Vegan Friendly</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🌺</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะ Tropical</h5>
-                            <p class="card-text small">มัทฉะผสมเสาวรส แยมสตรอว์เบอร์รี่ และบุก</p>
-                            <p class="mb-2">
-                                <span class="price-tag">165 บาท</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍯</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Einspanner Salted Honey</h5>
-                            <p class="card-text small">มัทฉะเอสเพรสโซ่ราดด้วยครีมเค็มและน้ำผึ้ง</p>
-                            <p class="mb-2">
-                                <span class="price-tag">175 บาท</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bakery Section -->
-    <section id="bakery" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center section-title">เบเกอรี่มัทฉะ</h2>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍰</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะชีสเค้ก</h5>
-                            <p class="card-text">ชีสเค้กรสชาเขียว เข้มข้น หอมอร่อย</p>
-                            <span class="price-tag">165 บาท</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🥧</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะบานอฟฟี่</h5>
-                            <p class="card-text">บานอฟฟี่ที่ใส่ครีมชาเขียว</p>
-                            <span class="price-tag">145 บาท</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍮</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">พานาคอตต้ามัทฉะ</h5>
-                            <p class="card-text">พานาคอตต้าเนื้อนุ่มรสชาเขียว</p>
-                            <span class="price-tag">125 บาท</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🧁</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">มัทฉะชิฟฟ่อน</h5>
-                            <p class="card-text">เค้กชิฟฟ่อนรสชาเขียว เนื้อนุ่ม เบา</p>
-                            <span class="price-tag">135 บาท</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <div class="card product-card h-100">
-                        <div class="product-image">🍊</div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">ยูซุโรลเค้ก</h5>
-                            <p class="card-text">โรลเค้กสอดไส้ครีมยูซุ</p>
-                            <span class="price-tag">155 บาท</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </section><!-- /Hero Section -->
 
     <!-- About Section -->
-    <section class="py-5 japanese-pattern">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="section-title">เกี่ยวกับ RUJI MATCHA</h2>
-                    <p class="lead">นำเสนอมัทฉะคุณภาพสูงจากญี่ปุ่น</p>
-                    <p>เราคัดสรรใบชาเขียวคุณภาพเยี่ยมจากภูเขาอูจิ ประเทศญี่ปุ่น มาผลิตเป็นเครื่องดื่มและขนมหวานที่มีรสชาติเข้มข้น หอมหวาน และมีประโยชน์ต่อสุขภาพ</p>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>มัทฉะแท้ 100% จากญี่ปุ่น</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>ไม่ใช้สารเติมแต่งสี</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>มีตัวเลือกสำหรับมังสวิรัติ</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>สูตรเฉพาะจากเชฟญี่ปุ่น</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6">
-                    <div class="text-center">
-                        <div class="display-1" style="color: var(--matcha-green);">🍵</div>
-                        <h4 class="mt-3">คุณภาพระดับพรีเมี่ยม</h4>
-                        <p class="text-muted">สัมผัสรสชาติแท้ของมัทฉะญี่ปุ่น</p>
-                    </div>
-                </div>
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us<br></h2>
+        <p><span>Learn More</span> <span class="description-title">About Us</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+            <img class="src-fluid mb-4" alt="" src="assets/img/m3.jpeg" style="width: 70%">
+          </div>
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic">
+                Welcome to Mori Matcha, where we bring the ancient art of Japanese matcha to a modern world. 
+                Our journey began with a simple passion: to share the pure, 
+                vibrant taste of ceremonial-grade matcha, 
+                sourced directly from the finest tea farms in Uji, Japan. 
+                We believe that a cup of matcha is more than just a drink; 
+                it's a moment of tranquility and a source of natural, focused energy.
+              </p>
+              <div class="position-relative mt-4">
+                <img class="src-fluid mb-4" alt="" src="assets/img/m5.jpeg" style="width: 90%">
+                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center section-title">ติดต่อเรา</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="row text-center">
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="bi bi-geo-alt-fill text-success fs-1 mb-3"></i>
-                                    <h5>ที่อยู่</h5>
-                                    <p class="text-muted">123 ถนนสุขุมวิท<br>กรุงเทพฯ 10110</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="bi bi-telephone-fill text-success fs-1 mb-3"></i>
-                                    <h5>โทรศัพท์</h5>
-                                    <p class="text-muted">02-123-4567<br>081-234-5678</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <i class="bi bi-clock-fill text-success fs-1 mb-3"></i>
-                                    <h5>เวลาเปิด-ปิด</h5>
-                                    <p class="text-muted">จันทร์-อาทิตย์<br>08:00 - 22:00</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      </div>
+
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Menu</h2>
+        <p><span>Check Our</span> <span class="description-title">Yummy Menu</span></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+
+          <li class="nav-item">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
+              <h4>Choose now</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="menu-starters">
+
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>MATCHA</h3>
             </div>
+
+            <div class="row gy-5">
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/m6.jpg" class="glightbox"><img class="src-fluid mb-4" alt="" src="assets/img/m6.jpg" style="width: 60%"></a>
+                <h4>Ice Matcha Green Tea Latte</h4>
+                <p class="ingredients">
+                </p>
+                <p class="price">
+                  130฿
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/m8.jpg" class="glightbox"><img class="src-fluid mb-4" alt="" src="assets/img/m8.jpg" style="width: 60%"></a>
+                <h4>Matcha Green Tea Fappuccino</h4>
+                <p class="ingredients">
+                </p>
+                <p class="price">
+                  145฿
+                </p>
+              </div><!-- Menu Item -->
+
+              <div class="col-lg-4 menu-item">
+                <a href="assets/img/m7.jpg" class="glightbox"><img class="src-fluid mb-4" alt="" src="assets/img/m7.jpg" style="width: 57%"></a>
+                <h4>Matcha Green Tea Frappe Wipe</h4>
+                <p class="ingredients">
+                </p>
+                <p class="price">
+                  135฿
+                </p>
+              
+
+          </div><!-- End Starter Menu Content -->
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div class="address">
+            <h4>Address</h4>
+            <p>19/6 Kanchanaphisek Road</p>
+            <p>Khannayao District, Bangkok 10230</p>
+            <p></p>
+          </div>
+
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="logo.svg" alt="RUJI MATCHA Logo" height="35" class="me-3">
-                        <h5 class="mb-0">RUJI MATCHA</h5>
-                    </div>
-                    <p>มัทฉะแท้จากญี่ปุ่น รสชาติเข้มข้น หอมหวาน</p>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-white"><i class="bi bi-facebook fs-4"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-instagram fs-4"></i></a>
-                        <a href="#" class="text-white"><i class="bi bi-line fs-4"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>เมนูยอดนิยม</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white-50 text-decoration-none">มัทฉะลาเต้</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">มัทฉะมะพร้าว</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">มัทฉะชีสเค้ก</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">มัทฉะชิฟฟ่อน</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>ข้อมูลเพิ่มเติม</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white-50 text-decoration-none">เกี่ยวกับเรา</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">นโยบายความเป็นส่วนตัว</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">เงื่อนไขการใช้งาน</a></li>
-                        <li><a href="#" class="text-white-50 text-decoration-none">ติดต่อเรา</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 RUJI MATCHA. สงวนลิขสิทธิ์.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">Made with <i class="bi bi-heart-fill text-danger"></i> for matcha lovers</p>
-                </div>
-            </div>
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Contact</h4>
+            <p>
+              <strong>Phone:</strong> <span>02-1231234</span><br>
+              <strong>Email:</strong> <span>morimatcha@gmail.com</span><br>
+            </p>
+          </div>
         </div>
-    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Smooth Scrolling -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const navHeight = document.querySelector('.navbar').offsetHeight;
-                    const targetPosition = target.offsetTop - navHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>
+              <strong>Mon-Sat:</strong> <span>7AM - 7PM</span><br>
+              <strong>Sunday</strong>: <span>Closed</span>
+            </p>
+          </div>
+        </div>
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.backgroundColor = 'rgba(74, 103, 65, 0.95)';
-            } else {
-                navbar.style.backgroundColor = 'transparent';
-            }
-        });
-    </script>
+        <div class="col-lg-3 col-md-6">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
